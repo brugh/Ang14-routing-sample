@@ -12,6 +12,6 @@ if (environment.production) enableProdMode();
 
 bootstrapApplication(AppComponent, {
   providers: [
-    importProvidersFrom(RouterModule.forRoot(APP_ROUTES), BrowserAnimationsModule)
+    importProvidersFrom(RouterModule.forRoot(APP_ROUTES), BrowserAnimationsModule, BrowserAnimationsModule)
   ]
 }).catch(err => console.error(err));
