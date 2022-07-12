@@ -5,15 +5,21 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "g:c": "ng generate component --flat --inline-template --standalone --style=none",
+    "g:d": "ng generate directive --flat --standalone",
+    "g:p": "ng generate pipe --flat --standalone",
+    "g:s": "ng generate service --flat"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.0.5",
+    "@angular/cdk": "^14.0.4",
     "@angular/common": "^14.0.5",
     "@angular/compiler": "^14.0.5",
     "@angular/core": "^14.0.5",
     "@angular/forms": "^14.0.5",
+    "@angular/material": "^14.0.4",
     "@angular/platform-browser": "^14.0.5",
     "@angular/platform-browser-dynamic": "^14.0.5",
     "@angular/router": "^14.0.5",
