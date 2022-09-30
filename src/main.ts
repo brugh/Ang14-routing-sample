@@ -11,6 +11,7 @@ import { APP_ROUTES } from './app/app.router';
 import { bookReducer } from './app/books/books.reducer';
 import { BooksEffect } from './app/books/books.effect';
 import { environment } from './environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 
 if (environment.production) enableProdMode();
 
@@ -21,7 +22,8 @@ bootstrapApplication(AppComponent, {
       BrowserAnimationsModule,
       StoreModule.forRoot({'books': bookReducer}),
       StoreDevtoolsModule.instrument(),
-      EffectsModule.forRoot([BooksEffect])
+      EffectsModule.forRoot([BooksEffect]),
+      HttpClientModule
     )
   ]
 }).catch(err => console.error(err));

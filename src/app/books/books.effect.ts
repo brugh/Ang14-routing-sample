@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { inject, Injectable } from "@angular/core";
 import { Actions, ofType, createEffect } from "@ngrx/effects";
 import { Store } from "@ngrx/store";
 import { EMPTY, map, mergeMap, withLatestFrom } from 'rxjs';
@@ -8,12 +8,11 @@ import { Books } from "./books";
 
 @Injectable()
 export class BooksEffect {
+  booksService = inject(BooksService);
+  store = inject(Store<{books: Books}>);
+  private actions$ = inject(Actions);
 
-  constructor(
-    private actions$: Actions,
-    private booksService: BooksService,
-    private store: Store<{books: Books}>
-  ) { }
+  constructor() { }
 
   loadAllBooks$ = createEffect(() =>
     this.actions$.pipe(

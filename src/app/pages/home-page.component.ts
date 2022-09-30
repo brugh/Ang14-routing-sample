@@ -17,7 +17,7 @@ import { Observable } from 'rxjs';
       home-page works!
     </p>
     <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
-    <div *ngFor="let b of books$|async">
+    <div class="card" *ngFor="let b of books$|async">
       <ul>
         <li>Title: <b>{{b.name}}</b></li>
         <li>Author: {{b.author}}</li>
@@ -27,6 +27,7 @@ import { Observable } from 'rxjs';
   `,
   styles: [`
     ul { list-style-type: none }
+    .card { border: 1px solid #ccc; border-radius:1em; margin: 1em}
   `]
 })
 export class HomePageComponent implements OnInit {
